@@ -55,6 +55,7 @@ var TabBarExample = React.createClass({
         name="blueTab"
         zicon={_ix_DEPRECATED('favorites')}
         iconName='rocket'
+        title='samba'
         selectedIconName='rocket'
         accessibilityLabel="Blue Tab"
         selected={this.state.selectedTab === 'blueTab'}
@@ -64,8 +65,7 @@ var TabBarExample = React.createClass({
           });
         }}>
 
-        
-        
+         
         <NavigatorIOS
         style={styles.navigator}
         ref="nav2"
@@ -86,6 +86,7 @@ var TabBarExample = React.createClass({
         }}>
 
         </NavigatorIOS>
+        
 
         
 
@@ -134,8 +135,9 @@ var styles = StyleSheet.create({
     alignItems: 'center',
   },
   tabText: {
-    color: 'white',
-    margin: 50,
+    color: 'black',
+    //margin: 50,
+    fontSize :200
   },
 });
 
