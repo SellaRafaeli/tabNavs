@@ -26,7 +26,6 @@ var styles = StyleSheet.create({
 class Page extends Component {
   constructor() {
     super()
-    debugger
     this.state = {
             a: 'mooga'
         };
@@ -34,19 +33,25 @@ class Page extends Component {
 
 
   render() {
-    debugger
-    var b = this.props.b || "bla";
+    var b = this.props.b+1 || "bla";
     return (
       <View style={styles.container}>
         <TouchableHighlight
                   onPress={() => { 
                     console.log("yab"); 
-                    debugger
-                    console.log(this); 
+                    var nav = this.props.navigator;
+                    nav.push({
+                      title: "another "+b,
+                      component: Page,
+                      passProps: {b:b, a:11},
+                      rightButtonTitle: 'Do-Cancel '+b,
+                      onRightButtonPress: () => { nav.pop(); }
+                    });
+                    
                   }}>        
         <Text style={styles.description}>
           {this.state.a}
-          {b} 
+          {b}
         </Text>
         </TouchableHighlight>
         
