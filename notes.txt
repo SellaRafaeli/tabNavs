@@ -4,3 +4,4 @@ Questions:
 - how to inspect elements? OM? 
 - intro to x-code (like fuzzy-search for files)
 - run the practice app (miising RCTRootView.h?)
+- add icons 

@@ -1,6 +1,8 @@
 'use strict';
- 
+//var Icon = require('react-native-icons'); 
 var React = require('react-native');
+
+
 var {
   StyleSheet,
   View,
@@ -9,6 +11,10 @@ var {
   TouchableHighlight
 } = React;
  
+var Icon = require('react-native-vector-icons/FontAwesome');
+
+var myIcon = (<Icon name="rocket" size={100} color="#900" />)
+debugger
 var styles = StyleSheet.create({
   description: {
     fontSize: 20,
@@ -22,7 +28,9 @@ var styles = StyleSheet.create({
     backgroundColor: '#765432',
   }
 });
- 
+
+//var Icon = require('react-native-icons');
+
 class Page extends Component {
   constructor() {
     super()
@@ -34,27 +42,10 @@ class Page extends Component {
 
   render() {
     var b = this.props.b+1 || "bla";
+    var Icon = require('react-native-icons');
     return (
-      <View style={styles.container}>
-        <TouchableHighlight
-                  onPress={() => { 
-                    console.log("yab"); 
-                    var nav = this.props.navigator;
-                    nav.push({
-                      title: "another "+b,
-                      component: Page,
-                      passProps: {b:b, a:11},
-                      rightButtonTitle: 'Do-Cancel '+b,
-                      onRightButtonPress: () => { nav.pop(); }
-                    });
-                    
-                  }}>        
-        <Text style={styles.description}>
-          {this.state.a}
-          {b}
-        </Text>
-        </TouchableHighlight>
-        
+      <View>
+      {myIcon}
       </View>
     );
   }

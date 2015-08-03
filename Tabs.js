@@ -13,6 +13,7 @@ var TabBarItemIOS = TabBarIOS.Item;
 //var Search = require("./Search");
 //var Invites = require("./Invites");
 var Page = require("./page");
+//var Icon = require('react-native-icons');
 var EmptyPage = React.createClass({
 
   render: function() {
