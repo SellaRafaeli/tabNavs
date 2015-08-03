@@ -5,7 +5,8 @@ var {
   StyleSheet,
   View,
   Text,
-  Component
+  Component,
+  TouchableHighlight
 } = React;
  
 var styles = StyleSheet.create({
@@ -23,12 +24,32 @@ var styles = StyleSheet.create({
 });
  
 class Page extends Component {
+  constructor() {
+    super()
+    debugger
+    this.state = {
+            a: 'mooga'
+        };
+  }
+
+
   render() {
+    debugger
+    var b = this.props.b || "bla";
     return (
       <View style={styles.container}>
+        <TouchableHighlight
+                  onPress={() => { 
+                    console.log("yab"); 
+                    debugger
+                    console.log(this); 
+                  }}>        
         <Text style={styles.description}>
-          This is page 1
+          {this.state.a}
+          {b} 
         </Text>
+        </TouchableHighlight>
+        
       </View>
     );
   }

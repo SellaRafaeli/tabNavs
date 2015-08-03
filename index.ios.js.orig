@@ -50,7 +50,7 @@ class tabs_with_nav extends Component {
     );
   }
 }
-debugger
+
 AppRegistry.registerComponent('tabs_with_nav', () => tabs_with_nav);
 
 // var tabs_with_nav = React.createClass({

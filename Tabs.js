@@ -67,6 +67,8 @@ var TabBarExample = React.createClass({
           this.refs.nav2.navigator.push({
             title: "test",
             component: Page,
+            passProps: {b:20, a:1},
+            foo: "bar",
             rightButtonTitle: 'Cancel',
             onRightButtonPress: () => { this.refs.nav2.navigator.pop(); }
           });
