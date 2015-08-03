@@ -16,7 +16,7 @@ var TabBarItemIOS = Icon.TabBarItem;
 
 //var Search = require("./Search");
 //var Invites = require("./Invites");
-var Page = require("./page");
+var PostsList = require("./postsList");
 //var Icon = require('react-native-icons');
 var EmptyPage = React.createClass({
 
@@ -55,7 +55,7 @@ var TabBarExample = React.createClass({
         name="blueTab"
         zicon={_ix_DEPRECATED('favorites')}
         iconName='rocket'
-        title='samba'
+        title='Feed'
         selectedIconName='rocket'
         accessibilityLabel="Blue Tab"
         selected={this.state.selectedTab === 'blueTab'}
@@ -70,13 +70,13 @@ var TabBarExample = React.createClass({
         style={styles.navigator}
         ref="nav2"
         initialRoute={{
-          component: Page,
+          component: PostsList,
           title: "page title2 ",
           rightButtonTitle: 'New Invite 2',
           onRightButtonPress: () => {
             this.refs.nav2.navigator.push({
               title: "test",
-              component: Page,
+              component: PostsList,
               passProps: {b:20, a:1},
               foo: "bar",
               rightButtonTitle: 'Cancel',
@@ -94,7 +94,9 @@ var TabBarExample = React.createClass({
       <TabBarItemIOS
       accessibilityLabel="Red Tab"
       name="redTab"
-      icon={_ix_DEPRECATED('history')}
+      title="Hot Dogs"
+      iconName="plane"
+      //icon={_ix_DEPRECATED('history')}
       badgeValue={this.state.notifCount ? String(this.state.notifCount) : null}
       selected={this.state.selectedTab === 'redTab'}
       onPress={() => {
@@ -107,13 +109,13 @@ var TabBarExample = React.createClass({
       ref="nav"
       style={styles.navigator}
       initialRoute={{
-        component: Page,
+        component: PostsList,
         title: "my title",
         rightButtonTitle: 'New Invite',
         onRightButtonPress: () => {
           this.refs.nav.navigator.push({
             title: "test",
-            component: Page,
+            component: PostsList,
             rightButtonTitle: 'Cancel',
             onRightButtonPress: () => { this.refs.nav.navigator.pop(); }
           });}
