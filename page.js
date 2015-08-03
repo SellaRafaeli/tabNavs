@@ -13,7 +13,8 @@ var {
  
 var Icon = require('react-native-vector-icons/FontAwesome');
 
-var myIcon = (<Icon name="rocket" size={100} color="#900" />)
+
+
 debugger
 var styles = StyleSheet.create({
   description: {
@@ -26,9 +27,13 @@ var styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#765432',
+  },
+  icon: {
+    marginTop: 100
   }
 });
 
+var myIcon = (<Icon name="rocket" size={100} marginTop={100} color="#900" style={styles.icon}/>)
 //var Icon = require('react-native-icons');
 
 class Page extends Component {
