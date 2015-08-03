@@ -1,0 +1,93 @@
+/**
+ * Sample React Native App 
+ * https://github.com/facebook/react-native
+ */
+'use strict';
+
+var React = require('react-native');
+var Welcome = require('./welcome.ios');
+var More = require('./more.ios');
+
+var {
+  AppRegistry,
+  TabBarIOS,
+  Component
+} = React;
+
+
+class tabs_with_nav extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      selectedTab: 'welcome'
+    };
+  }
+
+  render() {
+    return (
+      <TabBarIOS selectedTab={this.state.selectedTab}>
+        <TabBarIOS.Item
+          selected={this.state.selectedTab === 'welcome'}
+          icon={{uri:'featured'}}
+          onPress={() => {
+              this.setState({
+                  selectedTab: 'welcome',
+              });
+          }}>
+            <Welcome/>
+        </TabBarIOS.Item>
+        <TabBarIOS.Item
+          selected={this.state.selectedTab === 'more'}
+          icon={{uri:'contacts'}}
+          onPress={() => {
+                this.setState({
+                    selectedTab: 'more',
+                });
+          }}>
+          <More/>
+        </TabBarIOS.Item>
+      </TabBarIOS>
+    );
+  }
+}
+debugger
+AppRegistry.registerComponent('tabs_with_nav', () => tabs_with_nav);
+
+// var tabs_with_nav = React.createClass({
+//   render: function() {
+//     return (
+//       <View style={styles.container}>
+//         <Text style={styles.welcome}>
+//           Welcome to React Native!
+//         </Text>
+//         <Text style={styles.instructions}>
+//           To get started, edit index.ios.js
+//         </Text>
+//         <Text style={styles.instructions}>
+//           Press Cmd+R to reload,{'\n'}
+//           Cmd+D or shake for dev menu
+//         </Text>
+//       </View>
+//     );
+//   }
+// });
+
+// var styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     justifyContent: 'center',
+//     alignItems: 'center',
+//     backgroundColor: '#F5FCFF',
+//   },
+//   welcome: {
+//     fontSize: 20,
+//     textAlign: 'center',
+//     margin: 10,
+//   },
+//   instructions: {
+//     textAlign: 'center',
+//     color: '#333333',
+//     marginBottom: 5,
+//   },
+// });
+
