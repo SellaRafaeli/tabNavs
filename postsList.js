@@ -1,7 +1,7 @@
 'use strict';
 //var Icon = require('react-native-icons'); 
 var React = require('react-native');
-
+var SinglePost = require ('./singlePost');
 
 var {
   StyleSheet,
@@ -43,10 +43,10 @@ var myIcon = (<Icon name="rocket" size={100} marginTop={100} color="#900" style=
 //var Icon = require('react-native-icons');
 
 var posts = [
-  {username:'joe',b:2},
-  {username:'bob',b:2},
-  {username:'bill',b:2},
-  {username:'dave',b:2}
+  {username:'joe',title:'hello1', b:2},
+  {username:'bob',title:'hello1', b:2},
+  {username:'bill', title:'hello12', b:2},
+  {username:'dave', title:'hello3', b:2}
 ]
 class PostsList extends Component {
   constructor() {
@@ -70,9 +70,9 @@ class PostsList extends Component {
             var username = rowData.username || 'sella-rafaeli';
             var nav = this.props.navigator;
             nav.push({
-              title: username,
-              component: PostsList,
-              //passProps: {b:b, a:11},
+              title: rowData.title,
+              component: SinglePost,
+              passProps: {postData: rowData},
               rightButtonTitle: 'Do-Cancel '+username,
               onRightButtonPress: () => { nav.pop(); }
             });
@@ -80,18 +80,20 @@ class PostsList extends Component {
           }}
       >
       <View>
-      {myIcon}
+      <SinglePost postData={rowData}/>
+      { /* {myIcon}
+
       <Text style={styles.item_q}
       >{rowData.q_text || 'no q_test'}</Text>
-      <Text style={styles.item_a}>{rowData.a_text}</Text>
-      </View>
+      <Text style={styles.item_a}>{rowData.a_text}</Text> */}
+      </View> 
       </TouchableHighlight>
     )
   }
 
   render() {
-    var b = this.props.b+1 || "bla";
-    var Icon = require('react-native-icons');
+    // var b = this.props.b+1 || "bla";
+    //var Icon = require('react-native-icons');
     return (
       <View style={[styles.tabContent, {backgroundColor: 'lightblue'}]}>
        <ListView
