@@ -46,7 +46,8 @@ var posts = [
   {username:'joe',title:'hello1', b:2},
   {username:'bob',title:'hello1', b:2},
   {username:'bill', title:'hello12', b:2},
-  {username:'dave', title:'hello3', b:2}
+  {username:'dave', title:'hello3', b:2},
+  {username:'foo', title:'hello foo', b:2}
 ]
 class PostsList extends Component {
   constructor() {
@@ -58,36 +59,10 @@ class PostsList extends Component {
     };
   }
 
-  _renderRow(rowData) {
+  _renderRow(rowData,nav) {
     rowData = rowData || {};
     return (
-      <TouchableHighlight
-        onPress={() => {          
-            console.log("pressed row view!");
-            var opts = {
-              username: "sella-rafaeli"
-            }
-            var username = rowData.username || 'sella-rafaeli';
-            var nav = this.props.navigator;
-            nav.push({
-              title: rowData.title,
-              component: SinglePost,
-              passProps: {postData: rowData},
-              rightButtonTitle: 'Do-Cancel '+username,
-              onRightButtonPress: () => { nav.pop(); }
-            });
-            //this._newTab({title: username+'\'s posts', posts: userPosts});  
-          }}
-      >
-      <View>
-      <SinglePost postData={rowData}/>
-      { /* {myIcon}
-
-      <Text style={styles.item_q}
-      >{rowData.q_text || 'no q_test'}</Text>
-      <Text style={styles.item_a}>{rowData.a_text}</Text> */}
-      </View> 
-      </TouchableHighlight>
+      <SinglePost postData={rowData} nav={nav}/>
     )
   }
 
@@ -99,7 +74,7 @@ class PostsList extends Component {
        <ListView
       style={styles.listView}
       dataSource={this.state.dataSource}
-      renderRow={(rowData) => this._renderRow(rowData)}
+      renderRow={(rowData) => this._renderRow(rowData, this.props.navigator)}
     />      
       </View>
     );
