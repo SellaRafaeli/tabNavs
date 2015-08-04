@@ -74,13 +74,16 @@ var TabBarExample = React.createClass({
           component: PostsList,
           title: "page title2 ",
           rightButtonTitle: 'New Invite 2',
+          passProps: {postsType: "feed 3"},
+          postsType: 'feed2',
+          a: 101,
           onRightButtonPress: () => {
-            debugger
+            
             var ddd = SinglePost
             this.refs.nav2.navigator.push({
               title: "test",
               component: PostsList,
-              passProps: {b:20, a:1},
+              passProps: {b:20, a:1, postsType: 'feed'},
               foo: "bar",
               rightButtonTitle: 'Cancel',
               onRightButtonPress: () => { this.refs.nav2.navigator.pop(); }

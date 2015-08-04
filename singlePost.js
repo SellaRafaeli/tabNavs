@@ -79,22 +79,19 @@ class SinglePost extends Component {
     // console.log(this.state.props)
     return (
       <View style={[{flex:1, marginTop:50, backgroundColor: 'purple'}]}>
-      <Text>Samba</Text>
+      <Text>{postData.username}</Text>
       <TouchableHighlight
         style={[{borderColor: 'red', borderWidth:1, backgroundColor: 'lightblue', fontSize: 100}]}
         onPress={() => {          
             console.log("pressed row view!");
-            var opts = {
-              username: "sella-rafaeli"
-            }
-            var username = this.props.username || 'sella-rafaeli';
+            var username = postData.username || 'sella-rafaeli';
             var nav = this.props.nav;
-            //var ddd = PostsList;
+            
             nav.push({
               title: postData.title,
               component: this.props.postsListComponent,
               //component: SinglePost,
-              passProps: {postData: postData, nav: nav},
+              passProps: {postData: postData, nav: nav, postsType: 'posts for '+username},
               rightButtonTitle: 'Do-Cancel '+username,
               onRightButtonPress: () => { nav.pop(); }
             });

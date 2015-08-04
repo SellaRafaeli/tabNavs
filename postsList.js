@@ -71,13 +71,15 @@ log("hallo");
   }
 
   render() {
-    log("yam");
+    log("listprops")
+
+    //log(this.props);
     // var b = this.props.b+1 || "bla";
     //var Icon = require('react-native-icons');
     return (
-      <View style={[styles.tabContent, {backgroundColor: 'lightblue'}]}>
+      <View style={[styles.tabContent, {backgroundColor: 'green'}]}>
+      <Text style={[{marginTop:140, fontSize: 20, backgroundColor: 'violet'}]}>{this.props.postsType || 'no postsType given'}</Text>
        <ListView
-      style={styles.listView}
       dataSource={this.state.dataSource}
       renderRow={(rowData) => this._renderRow(rowData, this.props.navigator)}
     />      
