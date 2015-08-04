@@ -17,6 +17,7 @@ var TabBarItemIOS = Icon.TabBarItem;
 //var Search = require("./Search");
 //var Invites = require("./Invites");
 var PostsList = require("./postsList");
+var SinglePost = require("./singlePost");
 //var Icon = require('react-native-icons');
 var EmptyPage = React.createClass({
 
@@ -74,6 +75,8 @@ var TabBarExample = React.createClass({
           title: "page title2 ",
           rightButtonTitle: 'New Invite 2',
           onRightButtonPress: () => {
+            debugger
+            var ddd = SinglePost
             this.refs.nav2.navigator.push({
               title: "test",
               component: PostsList,

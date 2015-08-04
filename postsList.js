@@ -49,9 +49,13 @@ var posts = [
   {username:'dave', title:'hello3', b:2},
   {username:'foo', title:'hello foo', b:2}
 ]
+
+function log(s){console.log(s)};
+
 class PostsList extends Component {
   constructor() {
     super()
+log("hallo");
     var dataSource = new ListView.DataSource({rowHasChanged: (r1, r2) => r1.guid !== r2.guid});
     this.state = {
       a: 'mooga',
@@ -62,11 +66,12 @@ class PostsList extends Component {
   _renderRow(rowData,nav) {
     rowData = rowData || {};
     return (
-      <SinglePost postData={rowData} nav={nav}/>
+      <SinglePost postData={rowData} nav={nav} postsListComponent={PostsList}/>
     )
   }
 
   render() {
+    log("yam");
     // var b = this.props.b+1 || "bla";
     //var Icon = require('react-native-icons');
     return (

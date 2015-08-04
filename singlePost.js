@@ -1,6 +1,8 @@
 'use strict';
 //var Icon = require('react-native-icons'); 
-var React = require('react-native');
+var React     = require('react-native');
+
+
 
 var {
   StyleSheet,
@@ -10,7 +12,9 @@ var {
   TouchableHighlight,
   ListView
 } = React;
- 
+
+var bla = require("./postsList");
+
 var Icon = require('react-native-vector-icons/FontAwesome');
 
 var styles = StyleSheet.create({
@@ -48,9 +52,12 @@ var posts = [
   {username:'dave',b:2}
 ]
 
+function log(s){console.log(s)};
+
 class SinglePost extends Component {
   constructor() {
     super()
+    log("aroo");
     console.log("one");
     console.log(this.props);
     console.log(this.foo);  
@@ -82,9 +89,11 @@ class SinglePost extends Component {
             }
             var username = this.props.username || 'sella-rafaeli';
             var nav = this.props.nav;
+            //var ddd = PostsList;
             nav.push({
               title: postData.title,
-              component: SinglePost,
+              component: this.props.postsListComponent,
+              //component: SinglePost,
               passProps: {postData: postData, nav: nav},
               rightButtonTitle: 'Do-Cancel '+username,
               onRightButtonPress: () => { nav.pop(); }
@@ -109,5 +118,5 @@ class SinglePost extends Component {
     // return (<View>{myIcon}</View>); //working icon?
   }
 }
- 
+
 module.exports = SinglePost;
