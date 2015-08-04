@@ -6,3 +6,5 @@ Questions:
 - run the practice app (miising RCTRootView.h?)
 - add icons 
 - download example and run it, e.g.: https://github.com/oblador/react-native-vector-icons/blob/master/Examples/TabBarExample/index.ios.js
+- when I try to call 'PostsList' component from SinglePost (instead of calling another SinglePost) it doesn't work? But if I pass in the reference it does?
+- Running Chrome debug tools, 'require' doesn't seem to work? 

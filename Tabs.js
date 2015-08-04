@@ -18,6 +18,8 @@ var TabBarItemIOS = Icon.TabBarItem;
 //var Invites = require("./Invites");
 var PostsList = require("./postsList");
 var SinglePost = require("./singlePost");
+
+var UsersList = require("./usersList");
 //var Icon = require('react-native-icons');
 var EmptyPage = React.createClass({
 
@@ -115,8 +117,8 @@ var TabBarExample = React.createClass({
       ref="nav"
       style={styles.navigator}
       initialRoute={{
-        component: PostsList,
-        title: "my title",
+        component: UsersList,
+        title: "users",
         rightButtonTitle: 'New Invite',
         onRightButtonPress: () => {
           this.refs.nav.navigator.push({

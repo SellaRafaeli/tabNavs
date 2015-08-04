@@ -2,8 +2,6 @@
 //var Icon = require('react-native-icons'); 
 var React     = require('react-native');
 
-
-
 var {
   StyleSheet,
   View,
@@ -12,8 +10,6 @@ var {
   TouchableHighlight,
   ListView
 } = React;
-
-var bla = require("./postsList");
 
 var Icon = require('react-native-vector-icons/FontAwesome');
 
@@ -99,7 +95,7 @@ class SinglePost extends Component {
           }}
       >
       <View>
-      <Text>hello </Text>
+      <Text>hello</Text>
        <Text>{postData.title}</Text>
       { /* {myIcon}
   
